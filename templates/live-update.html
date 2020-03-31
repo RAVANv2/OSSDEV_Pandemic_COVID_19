@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_259256e99897410c82af1fd802bed082 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_259256e99897410c82af1fd802bed082" ></div>
+        
+</body>
+<script>    
+    
+            var map_259256e99897410c82af1fd802bed082 = L.map(
+                "map_259256e99897410c82af1fd802bed082",
+                {
+                    center: [-13.1339, 27.8493],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7f4425abca7746eda9782e7b864ecc53 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 14, "maxZoom": 14, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            var circle_e3b7291c4b38436695262fb3b236beee = L.circle(
+                [-15.4167, 28.2833],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_e3b7291c4b38436695262fb3b236beee.bindTooltip(
+                `<div>
+                     <li> Date :1-30-0202<li> Number of Cases :2<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_5eea5de9d7c54658839dcc61286cabd4 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_5eea5de9d7c54658839dcc61286cabd4.bindTooltip(
+                `<div>
+                     <li> Date :1-30-0202<li> Number of Cases :2<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_459141ed44d34b768d64bdd454ecc4a1 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_459141ed44d34b768d64bdd454ecc4a1.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :2<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_a44f05e736ad4763bb4e91e8657d7f8e = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_a44f05e736ad4763bb4e91e8657d7f8e.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :2<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_14fdd69e8fc7464abfd7ae134a5fc1ef = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_14fdd69e8fc7464abfd7ae134a5fc1ef.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :3<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_fd9f66a052e344e091ad17d75968a6c7 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_fd9f66a052e344e091ad17d75968a6c7.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :3<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_e6c5099d36864ee69f3da7d932abbf63 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_e6c5099d36864ee69f3da7d932abbf63.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :3<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_6ff6509539e24a87b61c7b2dc4a51ff7 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_6ff6509539e24a87b61c7b2dc4a51ff7.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :12<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_0f3ea9388b464b03b4591772589e321a = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_0f3ea9388b464b03b4591772589e321a.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :16<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b52d60fd1daa4693a9e8d12cf161b07d = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_b52d60fd1daa4693a9e8d12cf161b07d.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :22<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_b6a1255c583d447fb530b1307fab272a = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_b6a1255c583d447fb530b1307fab272a.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :28<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_fad3ebb2dda049e1b6145d978705eb26 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_fad3ebb2dda049e1b6145d978705eb26.bindTooltip(
+                `<div>
+                     <li> Date :2-30-0202<li> Number of Cases :29<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_7da22e9fb8cd45fdb86381872a759721 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_7da22e9fb8cd45fdb86381872a759721.bindTooltip(
+                `<div>
+                     <li> Date :3-30-0202<li> Number of Cases :35<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_4bd6544c46484574909476602e6c6b00 = L.circle(
+                [-13.1339, 27.8493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10000, "stroke": true, "weight": 3}
+            ).addTo(map_259256e99897410c82af1fd802bed082);
+        
+    
+            circle_4bd6544c46484574909476602e6c6b00.bindTooltip(
+                `<div>
+                     <li> Date :3-30-0202<li> Number of Cases :35<li> Status :confirmed
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

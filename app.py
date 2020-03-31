@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, url_for 
-import requests
+import requests, folium
+import pandas as pd
 app = Flask(__name__)
 
 @app.route('/',methods=['Get','Post'])
@@ -7,16 +8,84 @@ def homepage():
     country = 'India'
     if request.method == 'POST':
         country = request.form['country']
-    url = "https://api.covid19api.com/countries"
-    ans = requests.get(url).json()
-    for i in ans:
-        if i['Country'] == country:
-            print(country)
-    return render_template('main.html',newCountry=country)
 
-# @app.route('/pendemic/')
-# def pendemic(x):
-#     return render_template('pendemic.html',newCountry=x)
+        return redirect(url_for('pandemic',country = country))
+    return render_template('main.html',x=country)
+
+@app.route('/pandemic/<country>')
+def pandemic(country):
+    ans = requests.get(url = "https://api.covid19api.com/summary").json()
+    li = ans['Countries']
+    for i in li:
+        if i['Country'] == country:
+            newConfirmed = i['NewConfirmed']
+            totalConfirmed = i['TotalConfirmed']
+            newDeaths = i['NewDeaths']
+            totalDeaths = i['TotalDeaths']
+            newRecovered = i['NewRecovered']
+            totalRecovered = i['TotalRecovered']
+    return render_template('index.html',newCountry=country,newConfirmed=newConfirmed,totalConfirmed=totalConfirmed,newDeaths=newDeaths,totalDeaths=totalDeaths,newRecovered=newRecovered,totalRecovered=totalRecovered)
+
+@app.route('/map',methods=['Get','Post'])
+def Map():
+    data=pd.read_csv("train.csv")
+    data['active'] = data['ConfirmedCases']-data['Fatalities']
+    covid_map = folium.Map(location=[0, 0], tiles='cartodbpositron',
+            min_zoom=1, max_zoom=10, zoom_start=8)
+    
+    for i in range(0,len(data)):
+        folium.Circle(
+        color='red', 
+        location = [data['Lat'].iloc[i],data['Long'].iloc[i]],
+        tooltip='<li> Country :'+str(data['Country/Region'][i])+
+                '<li> Confirmed :'+str(data['ConfirmedCases'][i])+
+                '<li> Deaths :'+str(data['Fatalities'][i])+
+                '<li> Active :'+str(data['active'][i]),
+        radius=int(data.iloc[i]['ConfirmedCases'])**1.1
+        ).add_to(covid_map)
+    covid_map.save('./templates/osm.html')
+    return render_template('osm.html')
+
+@app.route('/Live-update',methods=['Get','Post'])
+def liveUpdate():
+    if request.method == 'POST':
+        country = request.form['mapcountry']
+        ans = requests.get(url=f"https://api.covid19api.com/country/{country}/status/confirmed/live").json()
+        
+        lat=[]
+        lon=[]
+        date=[]
+        cases=[]
+        status=[]
+        for i in ans:
+            lat.append(i["Lat"])
+            lon.append(i["Lon"])
+            date.append(i["Date"][:9])
+            cases.append(i["Cases"])
+            status.append(i["Status"])
+
+        m = folium.Map(location=[lat[5], lon[5]], width='100%', height='100%', left='0%', top='0%', position='relative', tiles='OpenStreetMap',    
+            min_zoom=0, max_zoom=14, zoom_start=5)
+
+        # print(date)
+        for i in range(len(lat)):
+            folium.Circle(
+                color='red',
+                location=[lat[i], lon[i]], 
+                tooltip='<li> Date :'+str(date[i][::-1]) +
+                        '<li> Number of Cases :'+str(cases[i]) +
+                        '<li> Status :' +str(status[i]), 
+                radius=int(10000)
+            ).add_to(m)
+
+        m.save('./templates/live-update.html')
+
+
+        return render_template('live-update.html')
+    return None
 
 if __name__=="__main__":
     app.run(debug=True)
+
+    # News API Key 
+    # 8d376cd332d047a9aa9468033438f7e9
