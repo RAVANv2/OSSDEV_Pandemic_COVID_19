@@ -29,7 +29,7 @@ def homepage():
                 totalRecovered = i['TotalRecovered']
 
         return render_template('index.html',newCountry=country,newConfirmed=newConfirmed,totalConfirmed=totalConfirmed,newDeaths=newDeaths,totalDeaths=totalDeaths,newRecovered=newRecovered,totalRecovered=totalRecovered)
-    return render_template('main.html',x=country)
+    return render_template('main1.html',x=country)
 
 # @app.route('/pandemic/<country>')
 # def pandemic(country):
