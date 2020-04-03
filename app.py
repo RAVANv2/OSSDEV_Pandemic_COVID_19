@@ -4,6 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 
+
 @app.route('/',methods=['GET','POST'])
 def homepage():   
     country = 'India'
