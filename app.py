@@ -4,7 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 
-@app.route('/',methods=['Get','Post'])
+@app.route('/',methods=['GET','POST'])
 def homepage():   
     country = 'India'
     if request.method == 'POST':
@@ -46,7 +46,7 @@ def homepage():
 #             totalRecovered = i['TotalRecovered']
 #     return render_template('index.html',newCountry=country,newConfirmed=newConfirmed,totalConfirmed=totalConfirmed,newDeaths=newDeaths,totalDeaths=totalDeaths,newRecovered=newRecovered,totalRecovered=totalRecovered)
 
-@app.route('/map',methods=['Get','Post'])
+@app.route('/map',methods=['GET','POST'])
 def Map():
     data=pd.read_csv("train.csv")
     data['active'] = data['ConfirmedCases']-data['Fatalities']
